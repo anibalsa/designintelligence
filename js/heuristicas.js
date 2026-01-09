@@ -1,31 +1,92 @@
+/***********************************************************
+ * HEURÍSTICAS — AGENTE 01
+ * Análise de Texto e Detecção de Perfil Cognitivo
+ ***********************************************************/
+
+/**
+ * Analisa o texto do utilizador para identificar maturidade,
+ * estado emocional e clareza estratégica.
+ * @param {string} texto - O conteúdo do campo 'dificuldade'
+ * @returns {string} - Uma chave de perfil para aplicação de pesos
+ */
 function analisarTexto(texto) {
-  texto = texto.toLowerCase();
+    if (!texto || texto.length < 10) return "baixa_clareza";
 
-  let score = {
-    emocional: 0,
-    tecnico: 0,
-    vago: 0
-  };
+    const textoMinusculo = texto.toLowerCase();
+    
+    // Contadores de categorias
+    let scores = {
+        estrategico: 0,
+        emocional: 0,
+        vago: 0,
+        estetico: 0
+    };
 
-  vocabulario.emocional.forEach(p => {
-    if (texto.includes(p)) score.emocional++;
-  });
+    // 1. Verificação via Vocabulário (JSON)
+    // Nota: O vocabulário é carregado globalmente pelo engine.js
+    if (vocabulario.tecnico) {
+        vocabulario.tecnico.forEach(p => {
+            if (textoMinusculo.includes(p.toLowerCase())) scores.estrategico += 1.5;
+        });
+    }
 
-  vocabulario.tecnico.forEach(p => {
-    if (texto.includes(p)) score.tecnico++;
-  });
+    if (vocabulario.emocional) {
+        vocabulario.emocional.forEach(p => {
+            if (textoMinusculo.includes(p.toLowerCase())) scores.emocional++;
+        });
+    }
 
-  vocabulario.vago.forEach(p => {
-    if (texto.includes(p)) score.vago++;
-  });
+    if (vocabulario.vago) {
+        vocabulario.vago.forEach(p => {
+            if (textoMinusculo.includes(p.toLowerCase())) scores.vago++;
+        });
+    }
 
-  if (score.tecnico > score.emocional && score.tecnico > score.vago) {
-    return "maturidade_alta";
-  }
+    // 2. Heurísticas de Densidade (Diferencial de Especialista)
+    const palavras = textoMinusculo.split(/\s+/).filter(p => p.length > 3);
+    const contagemPalavras = palavras.length;
 
-  if (score.emocional > score.tecnico) {
-    return "ansiedade";
-  }
+    // Termos de "Negócio de Alto Nível" (Hardcoded para garantir autoridade)
+    const termosAutoridade = [
+        "processo", "método", "lucro", "margem", "audiência", 
+        "conversão", "posicionamento", "autoridade", "escala", 
+        "consistência", "valor", "percepção", "investimento"
+    ];
+    
+    termosAutoridade.forEach(termo => {
+        if (textoMinusculo.includes(termo)) scores.estrategico += 2;
+    });
 
-  return "baixa_clareza";
+    // 3. Classificação do Perfil
+    
+    // Perfil: Maturidade Alta (Sinal claro de que sabe o que quer)
+    if (scores.estrategico > 5 || (scores.estrategico > scores.emocional && contagemPalavras > 20)) {
+        return "maturidade_alta";
+    }
+
+    // Perfil: Ansiedade (Muitos termos emocionais, pouca clareza de processo)
+    if (scores.emocional > scores.estrategico && scores.emocional > 2) {
+        return "ansiedade";
+    }
+
+    // Perfil: Briefing Raso (O maior inimigo da produtividade)
+    if (contagemPalavras < 8 || scores.vago > scores.estrategico) {
+        return "baixa_clareza";
+    }
+
+    // Padrão: Se não cair nos extremos, tratamos como necessidade de orientação
+    return "baixa_clareza";
+}
+
+/**
+ * Heurística Auxiliar: Deteta se o texto é puramente estético
+ * Útil para o Agente sugerir que "Design não é apenas perfumaria"
+ */
+function detectarFocoEstetico(texto) {
+    const termosEsteticos = ["bonito", "lindo", "cor", "logotipo", "desenho", "estética"];
+    let count = 0;
+    termosEsteticos.forEach(t => {
+        if (texto.toLowerCase().includes(t)) count++;
+    });
+    return count > 2;
 }

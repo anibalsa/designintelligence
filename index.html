@@ -4,277 +4,123 @@
   <meta charset="UTF-8">
   <title>Anibal Sá — Design Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family:"Inter Tight", system-ui, sans-serif;
-      color: #ddd;
-      background-color: #222;
-      font-size: 21px;
-    }
-
-    header {
-      padding: 32px 48px;
-    }
-
-    .logo img {
-      height: 72px;
-    }
-
-    main {
-      padding: 0 24px;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 48px 0;
-    }
-
-    h1 { letter-spacing: -3px; }
-    h2, h3 { letter-spacing: -1px; }
-    h2 { font-style: italic; }
-
-    p {
-      font-weight: 300;
-      line-height: 1.6;
-    }
-
-    /* HERO */
-    .hero h1 {
-      font-family: 'Baskervville', serif;
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      font-weight: 400;
-      margin-bottom: 24px;
-    }
-
-    .hero .subheadline {
-      opacity: 0.75;
-      margin-bottom: 40px;
-    }
-
-    /* MANIFESTO */
-    .manifesto {
-      background: #f7f7f7;
-      color: #111;
-      text-align: center;
-      border-radius: 8px;
-      padding: 3rem 2rem;
-    }
-
-    .manifesto p {
-      font-family: 'Baskervville', serif;
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      font-style: italic;
-      margin: 0;
-    }
-
-    /* AGENTE 01 */
-    .agent h2 {
-      font-family: 'Baskervville', serif;
-      font-size: 2.2rem;
-      font-weight: 400;
-    }
-
-    .agent form {
-      display: grid;
-      gap: 24px;
-      max-width: 520px;
-    }
-
-    .agent label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.7;
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    .agent input,
-    .agent select {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    .agent button {
-      margin-top: 12px;
-      padding: 14px 18px;
-      background: #666;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      cursor: pointer;
-      align-self: flex-end;
-    }
-
-    .agent button:hover {
-      background: #000;
-    }
-
-    /* OUTPUT */
-    .output {
-      margin-top: 48px;
-      max-width: 720px;
-      display: none;
-    }
-
-    .output h3 {
-      margin-top: 32px;
-      font-family: 'Baskervville', serif;
-      font-weight: 400;
-    }
-
-    footer {
-      padding: 48px;
-      font-size: 0.8rem;
-      opacity: 0.6;
-    }
-
-    @media(min-width: 1024px) {
-      main { padding: 0 48px; }
-    }
-  </style>
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-<header>
-  <div class="logo">
-    <img src="anibalsa-marca-2026.png" alt="">
-  </div>
-</header>
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Design <em>Intelligence</em></h1>
-    <div class="subheadline">
-      <h2>Human-led, AI-augmented design.</h2>
+  <header>
+    <div class="logo">
+      <strong>ANIBAL SÁ</strong> <span class="tagline">| Design Intelligence</span>
     </div>
-    <p>
-      Aqui o design não usa IA. Ele pensa com você.<br><br>
-      Estratégia humana, visão criativa e inteligência artificial trabalhando juntas
-      para construir clareza antes da forma.
-    </p>
-  </section>
+  </header>
 
-  <!-- MANIFESTO -->
-  <section class="manifesto">
-    <p>O design pensa com você.</p>
-  </section>
+  <main>
+    <section class="hero">
+      <h1>Design <em>Intelligence</em></h1>
+      <div class="subheadline">
+        <h2>Human-led, AI-augmented design.</h2>
+      </div>
+      <p>
+        Aqui o design não usa IA. Ele pensa com você.<br><br>
+        Estratégia humana, visão criativa e inteligência artificial trabalhando juntas
+        para construir clareza antes da forma.
+      </p>
+    </section>
 
-  <!-- AGENTE 01 -->
-  <section class="agent">
-    <h2>Agente 01 — Briefing Inteligente</h2>
-    <p>
-      Responda rapidamente. O Agente 01 devolve uma leitura estratégica inicial
-      com base exclusivamente nas suas respostas.
-    </p>
+    <section class="manifesto-section">
+      <p>O design pensa com você.</p>
+    </section>
 
-    <form id="agentForm">
+    <hr class="divider">
 
-  <div>
-    <label>Tipo de projeto</label>
-    <select id="tipoProjeto" required>
-      <option value="">Selecione</option>
-      <option>Identidade de marca</option>
-      <option>Site / Landing page</option>
-      <option>Posicionamento</option>
-      <option>Não sei / preciso de orientação</option>
-    </select>
-  </div>
+    <section class="agente-container">
+      <div class="intro-agente">
+        <h3>Agente 01: Briefing Estratégico</h3>
+        <p>Inicie o diagnóstico para alinhar sua visão ao nosso sistema de inteligência.</p>
+      </div>
 
-  <div>
-    <label>Momento do negócio</label>
-    <select id="momentoNegocio" required>
-      <option value="">Selecione</option>
-      <option>Estou começando agora</option>
-      <option>Já tenho clientes, quero crescer</option>
-      <option>O negócio já está estável</option>
-      <option>Estou passando por uma mudança ou dificuldade</option>
-    </select>
-  </div>
+      <form id="agente-form">
+        <div class="field-group">
+          <label for="tipoProjeto">O que precisamos construir?</label>
+          <select id="tipoProjeto" required>
+            <option value="">Selecione o desafio</option>
+            <option>Identidade de marca</option>
+            <option>Site / Landing page</option>
+            <option>Posicionamento</option>
+            <option>Não sei / preciso de orientação</option>
+          </select>
+        </div>
 
-  <div>
-    <label>Principal dificuldade</label>
-    <input type="text" id="dificuldade" placeholder="Ex: comunicação confusa" required>
-  </div>
+        <div class="field-group">
+          <label for="momentoNegocio">Em que estágio você está?</label>
+          <select id="momentoNegocio" required>
+            <option value="">Selecione o momento</option>
+            <option>Estou começando agora</option>
+            <option>Já tenho clientes, quero crescer</option>
+            <option>O negócio já está estável</option>
+            <option>Estou passando por uma mudança ou dificuldade</option>
+          </select>
+        </div>
 
-  <div>
-    <label>Sensação atual</label>
-    <select id="sensacao" required>
-      <option value="">Selecione</option>
-      <option>Confuso</option>
-      <option>Fraco / sem impacto</option>
-      <option>Incoerente</option>
-      <option>Travado</option>
-      <option>Não sei explicar</option>
-    </select>
-  </div>
+        <div class="field-group">
+          <label for="dificuldade">Descreva seu maior entrave hoje (seja específico):</label>
+          <textarea id="dificuldade" rows="4" placeholder="Ex: Sinto que minha marca não comunica o valor que cobro..." required></textarea>
+        </div>
 
-  <div>
-    <label>Objetivo principal</label>
-    <select id="objetivo" required>
-      <option value="">Selecione</option>
-      <option>Clareza</option>
-      <option>Credibilidade</option>
-      <option>Vender mais</option>
-      <option>Me diferenciar</option>
-      <option>Organizar o que já existe</option>
-    </select>
-  </div>
+        <div class="field-group">
+          <label for="sensacao">Como você se sente em relação à sua comunicação?</label>
+          <select id="sensacao" required>
+            <option value="">Selecione a sensação</option>
+            <option>Confuso</option>
+            <option>Fraco / sem impacto</option>
+            <option>Incoerente</option>
+            <option>Travado</option>
+            <option>Não sei explicar</option>
+          </select>
+        </div>
 
-  <button type="submit">Gerar leitura estratégica</button>
-</form>
+        <div class="field-group">
+          <label for="objetivo">Qual o objetivo inegociável?</label>
+          <select id="objetivo" required>
+            <option value="">Selecione o objetivo</option>
+            <option>Clareza</option>
+            <option>Credibilidade</option>
+            <option>Vender mais</option>
+            <option>Me diferenciar</option>
+            <option>Organizar o que já existe</option>
+          </select>
+        </div>
 
-<div id="output" style="display:none;">
-  <h3>Leitura inicial</h3>
-  <p id="leitura"></p>
+        <button type="submit" id="btn-gerar">Ativar Diagnóstico Inteligente</button>
+      </form>
+    </section>
 
-  <h4>Risco percebido</h4>
-  <p id="risco"></p>
+    <section id="output-section" class="output-container" style="display:none;">
+      <div class="result-card">
+        <h3>Leitura Estratégica</h3>
+        <p id="leitura" class="result-text"></p>
 
-  <h4>Próximo passo</h4>
-  <p id="proximo"></p>
-</div>
+        <h3>Risco e Oportunidade</h3>
+        <p id="risco" class="result-text"></p>
 
+        <h3>Diretriz Sugerida</h3>
+        <p id="proximo" class="result-text highlighted"></p>
+        
+        <div class="disclaimer">
+          *Este diagnóstico é gerado por um sistema de heurísticas autorais de Anibal Sá.
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <div class="output" id="output">
-      <h3>Leitura estratégica</h3>
-      <p id="leitura"></p>
-
-      <h3>Risco e oportunidade</h3>
-      <p id="risco"></p>
-
-      <h3>Próximo passo sugerido</h3>
-      <p id="proximo"></p>
-    </div>
-    <div id="debug" style="display:none; margin-top:20px; font-size:12px; opacity:.7;"></div>
-
-  </section>
-
-</main>
-
-<footer>
-  © Anibal Sá — Design Intelligence
-</footer>
-
-<script src="/js/heuristicas.js"></script>
-<script src="/js/matrizes.js"></script>
-<script src="/js/engine.js"></script>
-
-
+  <script src="js/pesos.js"></script>
+  <script src="js/heuristicas.js"></script>
+  <script src="js/matrizes.js"></script>
+  <script src="js/engine.js"></script>
 </body>
 </html>
