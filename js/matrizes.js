@@ -1,179 +1,92 @@
+/***********************************************************
+ * MATRIZES — AGENTE 01
+ * O Cérebro Estratégico: Diagnósticos e Provocações
+ ***********************************************************/
+
 const MATRIZES = {
 
-  /* ===============================
-     IDENTIDADE DE MARCA
-  =============================== */
-
   "Identidade de marca": {
-
     "Estou começando agora": {
-      leitura: "No início do negócio, a identidade precisa nascer como estrutura estratégica, não como estética isolada.",
-      risco: "Criar marca antes de clareza pode gerar desalinhamento precoce.",
-      proximo: "Definir posicionamento, público e mensagem antes da forma."
+      leitura: "No estágio embrionário, a marca não é um exercício estético, é uma decisão de fundação. O perigo aqui é gastar energia com 'perfumaria' antes de ter uma proposta de valor validada.",
+      risco: "Criar uma casca visual para um negócio sem corpo estratégico. O custo de mudar depois será o dobro.",
+      proximo: "Menos decoração, mais intenção. Precisamos definir o seu 'território' antes da paleta de cores."
     },
-
     "Já tenho clientes, quero crescer": {
-      leitura: "A identidade atual precisa sustentar crescimento e reconhecimento.",
-      risco: "Escalar inconsistência visual e discursiva.",
-      proximo: "Organizar sistema de marca e narrativa."
+      leitura: "O crescimento exige sistemas, não apenas logos. Sua marca atual provavelmente é um 'puxadinho' que funcionou até aqui, mas que agora está segurando a sua percepção de valor.",
+      risco: "Escalar a inconsistência. Se cada ponto de contato comunica algo diferente, você está queimando dinheiro em marketing.",
+      proximo: "Codificar sua identidade em um sistema que suporte a escala sem perder a essência autoral."
     },
-
     "O negócio já está estável": {
-      leitura: "A marca precisa refletir maturidade e coerência ao longo do tempo.",
-      risco: "Manter uma identidade que não acompanha a evolução do negócio.",
-      proximo: "Avaliar se a marca ainda representa o momento atual."
+      leitura: "A estabilidade é o prefácio da obsolescência. Marcas estáveis tendem a se tornar invisíveis se não revisarem sua relevância simbólica perante novos concorrentes.",
+      risco: "Ser percebido como 'datado' ou 'commodity de luxo' que não justifica mais o prêmio que cobra.",
+      proximo: "Uma auditoria de percepção para alinhar o que você é hoje com o que o mercado enxerga."
     },
-
     "Estou passando por uma mudança ou dificuldade": {
-      leitura: "A identidade pode estar desalinhada com a nova fase do negócio.",
-      risco: "Comunicar algo que o negócio já não é.",
-      proximo: "Revisitar fundamentos antes de redesenhar."
+      leitura: "Mudanças estruturais pedem um novo manifesto visual. Se o seu modelo de negócio mudou e a marca continua a mesma, você está enviando sinais contraditórios ao mercado.",
+      risco: "Tentar atrair o 'cliente do amanhã' com a roupagem do 'ontem'. Ruído cognitivo total.",
+      proximo: "Pivotagem estratégica da identidade para sinalizar o novo posicionamento imediatamente."
     }
   },
-
-  /* ===============================
-     SITE / LANDING PAGE
-  =============================== */
 
   "Site / Landing page": {
-
     "Estou começando agora": {
-      leitura: "O site deve funcionar como estrutura de clareza, não apenas presença digital.",
-      risco: "Criar páginas sem foco estratégico.",
-      proximo: "Definir objetivo principal do site antes do layout."
+      leitura: "Um site no início não é um portfólio; é uma máquina de validação. Ele deve responder por que você é a escolha certa em menos de 3 segundos.",
+      risco: "Complexidade desnecessária. Você não precisa de um portal, precisa de uma tese de vendas clara.",
+      proximo: "Focar em arquitetura de informação e copy agressivo de autoridade."
     },
-
     "Já tenho clientes, quero crescer": {
-      leitura: "O site precisa apoiar conversão e posicionamento.",
-      risco: "Ter tráfego sem direção clara.",
-      proximo: "Alinhar mensagem, fluxo e proposta de valor."
+      leitura: "Para crescer, seu site precisa deixar de ser um cartão de visitas passivo e se tornar um agente de vendas 24/7 que qualifica os leads por você.",
+      risco: "Perder conversão por falta de clareza no fluxo de decisão do usuário.",
+      proximo: "Otimizar a jornada do usuário com foco total em remoção de fricção e aumento de desejo."
     },
-
     "O negócio já está estável": {
-      leitura: "O site deve reforçar credibilidade e consistência.",
-      risco: "Ter um site funcional, porém inexpressivo.",
-      proximo: "Refinar experiência e narrativa."
+      leitura: "Para negócios consolidados, o site é a prova de autoridade. Ele deve exalar profissionalismo e sofisticação em cada detalhe de interação.",
+      risco: "Incongruência entre o preço que você cobra 'offline' e a experiência que entrega 'online'.",
+      proximo: "Refinamento de UX/UI para elevar a percepção de marca ao nível de elite do mercado."
     },
-
     "Estou passando por uma mudança ou dificuldade": {
-      leitura: "O site precisa refletir o novo momento do negócio.",
-      risco: "Manter uma comunicação desatualizada.",
-      proximo: "Reestruturar objetivos antes de redesenhar páginas."
+      leitura: "Se o site não está convertendo ou não reflete o novo momento, ele é um peso morto digital.",
+      risco: "Alta taxa de rejeição por desalinhamento entre a promessa e a entrega visual.",
+      proximo: "Diagnóstico de conversão e reestruturação narrativa completa."
     }
   },
-
-  /* ===============================
-     POSICIONAMENTO
-  =============================== */
 
   "Posicionamento": {
-
     "Estou começando agora": {
-      leitura: "Antes de comunicar, é essencial definir claramente o lugar que o negócio quer ocupar.",
-      risco: "Ser genérico e pouco memorável.",
-      proximo: "Mapear público, proposta e diferenciação."
+      leitura: "Posicionamento é o que as pessoas dizem de você quando você não está na sala. Se você não definir isso agora, o mercado o fará de forma genérica.",
+      risco: "Ser comparado por preço desde o dia 01.",
+      proximo: "Encontrar o seu 'ângulo de ataque' único que anula a concorrência direta."
     },
-
     "Já tenho clientes, quero crescer": {
-      leitura: "O posicionamento precisa evoluir para sustentar autoridade.",
-      risco: "Crescer com discurso frágil.",
-      proximo: "Revisar mensagem, foco e tom."
-    },
-
-    "O negócio já está estável": {
-      leitura: "Um posicionamento sólido garante coerência e longevidade.",
-      risco: "Estagnar enquanto o mercado evolui.",
-      proximo: "Validar se o posicionamento ainda é competitivo."
-    },
-
-    "Estou passando por uma mudança ou dificuldade": {
-      leitura: "Mudanças exigem reposicionamento consciente.",
-      risco: "Confundir o público durante a transição.",
-      proximo: "Redefinir narrativa antes de comunicar externamente."
-    }
-  },
-
-  /* ===============================
-     NÃO SEI / PRECISO DE ORIENTAÇÃO
-  =============================== */
-
-  "Não sei / preciso de orientação": {
-
-    "Estou começando agora": {
-      leitura: "A falta de clareza é natural no início, mas precisa ser organizada.",
-      risco: "Tomar decisões desconectadas.",
-      proximo: "Estruturar um diagnóstico guiado."
-    },
-
-    "Já tenho clientes, quero crescer": {
-      leitura: "O negócio funciona, mas a direção estratégica não está clara.",
-      risco: "Crescer sem coerência.",
-      proximo: "Organizar prioridades e foco."
-    },
-
-    "O negócio já está estável": {
-      leitura: "Mesmo estável, o negócio pode estar operando no automático.",
-      risco: "Perder relevância ao longo do tempo.",
-      proximo: "Reavaliar objetivos e diferenciação."
-    },
-
-    "Estou passando por uma mudança ou dificuldade": {
-      leitura: "Momentos de dificuldade pedem pausa estratégica.",
-      risco: "Reagir sem diagnóstico.",
-      proximo: "Compreender causas antes de agir."
+      leitura: "Você chegou aqui pelo seu trabalho duro. Para ir além, você precisa de autoridade percebida. O posicionamento é o multiplicador de valor do seu esforço.",
+      risco: "Trabalhar muito para ser visto como apenas mais um especialista no setor.",
+      proximo: "Transição de 'especialista generalista' para 'autoridade insubstituível'."
     }
   }
-
 };
 
-
+/**
+ * MOTOR DE INTERPRETAÇÃO (Final do Arquivo)
+ */
 function gerarLeitura(dados, estado) {
-
-  const base =
-    MATRIZES[dados.tipoProjeto]?.[dados.momentoNegocio];
+  const base = MATRIZES[dados.tipoProjeto]?.[dados.momentoNegocio];
 
   let leitura = base?.leitura || "O cenário indica necessidade de organização estratégica.";
   let risco = base?.risco || "Tomar decisões sem clareza pode gerar desperdício.";
   let proximo = base?.proximo || "Aprofundar o diagnóstico.";
 
-  // Interpretação do estado
-  if (estado.risco >= 4) {
-    risco += " O nível de risco percebido é alto.";
+  // Adições Dinâmicas baseadas nos Scores do pesos.js
+  if (estado.clareza < 0) {
+    leitura += " Notei uma névoa conceitual na sua descrição; sem clareza de premissas, o design será apenas um 'curativo'.";
   }
 
-  if (estado.clareza <= -3) {
-    leitura += " Há um déficit significativo de clareza.";
+  if (estado.risco > 5) {
+    risco += " O seu momento atual é de alta fragilidade operacional. Qualquer movimento estético agora é arriscado.";
   }
 
-  if (estado.posicionamento >= 3) {
-    proximo += " Com atenção especial ao posicionamento.";
+  if (estado.posicionamento > 4) {
+    proximo = "O foco aqui não é apenas mudar o visual, mas sim reescrever a sua posição de poder no mercado. " + proximo;
   }
-
-  if (estado.conversao >= 3) {
-    proximo += " Orientado a resultados e conversão.";
-  }
-
-  if (estado.estrutura >= 3) {
-    proximo += " Priorizando organização e consistência.";
-  }
-
-  if (estado.clareza <= -4) {
-    leitura += " A percepção geral indica desorganização conceitual.";
-  }
-
-  if (estado.foco >= 3) {
-    leitura += " Existe potencial de direcionamento estratégico.";
-  }
-
-  if (estado.risco >= 5) {
-    risco += " A tomada de decisão sem ajuste prévio pode gerar perdas relevantes.";
-  }
-
-  if (estado.posicionamento >= 4) {
-    proximo += " Trabalhar diferenciação será decisivo.";
-  }
-
 
   return { leitura, risco, proximo };
 }
-
