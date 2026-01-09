@@ -68,7 +68,7 @@ const MATRIZES = {
 /**
  * MOTOR DE INTERPRETAÇÃO (Final do Arquivo)
  */
-function gerarLeitura(dados, estado) {
+export function gerarLeitura(dados, estado) {
   const base = MATRIZES[dados.tipoProjeto]?.[dados.momentoNegocio];
 
   let leitura = base?.leitura || "O cenário indica necessidade de organização estratégica.";

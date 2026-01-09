@@ -3,7 +3,7 @@
  * Configuração de impacto para o motor de decisão
  ***********************************************************/
 
-const PESOS = {
+export const PESOS = {
 
   // Impacto baseado no tipo de desafio escolhido
   tipoProjeto: {

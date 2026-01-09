@@ -1,0 +1,33 @@
+# Dependências
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variáveis de Ambiente (CRUCIAL para o WP Headless)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor/Arquivos de Sistema
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# WordPress / PHP (Caso você tenha espelhado algo localmente)
+wp-config.php
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-db/

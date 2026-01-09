@@ -4,12 +4,18 @@
  ***********************************************************/
 
 /**
- * Analisa o texto do utilizador para identificar maturidade,
- * estado emocional e clareza estratégica.
+ * Analisa o texto do utilizador para identificar maturidade.
  * @param {string} texto - O conteúdo do campo 'dificuldade'
+ * @param {object} vocabulario - O objeto vindo do JSON carregado no engine
  * @returns {string} - Uma chave de perfil para aplicação de pesos
  */
-function analisarTexto(texto) {
+export function analisarTexto(texto, vocabulario) {
+    // Verificação de segurança: se o vocabulário não existir, evita quebrar o código
+    if (!vocabulario || !vocabulario.tecnico) {
+        console.warn("Vocabulário não carregado nas heurísticas.");
+        return "baixa_clareza";
+    }
+
     if (!texto || texto.length < 10) return "baixa_clareza";
 
     const textoMinusculo = texto.toLowerCase();
@@ -22,25 +28,18 @@ function analisarTexto(texto) {
         estetico: 0
     };
 
-    // 1. Verificação via Vocabulário (JSON)
-    // Nota: O vocabulário é carregado globalmente pelo engine.js
-    if (vocabulario.tecnico) {
-        vocabulario.tecnico.forEach(p => {
-            if (textoMinusculo.includes(p.toLowerCase())) scores.estrategico += 1.5;
-        });
-    }
+    // 1. Verificação via Vocabulário (JSON recebido via parâmetro)
+    vocabulario.tecnico.forEach(p => {
+        if (textoMinusculo.includes(p.toLowerCase())) scores.estrategico += 1.5;
+    });
 
-    if (vocabulario.emocional) {
-        vocabulario.emocional.forEach(p => {
-            if (textoMinusculo.includes(p.toLowerCase())) scores.emocional++;
-        });
-    }
+    vocabulario.emocional.forEach(p => {
+        if (textoMinusculo.includes(p.toLowerCase())) scores.emocional++;
+    });
 
-    if (vocabulario.vago) {
-        vocabulario.vago.forEach(p => {
-            if (textoMinusculo.includes(p.toLowerCase())) scores.vago++;
-        });
-    }
+    vocabulario.vago.forEach(p => {
+        if (textoMinusculo.includes(p.toLowerCase())) scores.vago++;
+    });
 
     // 2. Heurísticas de Densidade (Diferencial de Especialista)
     const palavras = textoMinusculo.split(/\s+/).filter(p => p.length > 3);
@@ -69,20 +68,18 @@ function analisarTexto(texto) {
         return "ansiedade";
     }
 
-    // Perfil: Briefing Raso (O maior inimigo da produtividade)
+    // Perfil: Briefing Raso
     if (contagemPalavras < 8 || scores.vago > scores.estrategico) {
         return "baixa_clareza";
     }
 
-    // Padrão: Se não cair nos extremos, tratamos como necessidade de orientação
     return "baixa_clareza";
 }
 
 /**
  * Heurística Auxiliar: Deteta se o texto é puramente estético
- * Útil para o Agente sugerir que "Design não é apenas perfumaria"
  */
-function detectarFocoEstetico(texto) {
+export function detectarFocoEstetico(texto) {
     const termosEsteticos = ["bonito", "lindo", "cor", "logotipo", "desenho", "estética"];
     let count = 0;
     termosEsteticos.forEach(t => {
