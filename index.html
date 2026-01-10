@@ -44,7 +44,23 @@
         <p>Inicie o diagnóstico para alinhar sua visão ao nosso sistema de inteligência.</p>
       </div>
 
+
       <form id="agente-form">
+        <div class="field-group">
+            <label for="cliente_nome">Seu Nome ou Empresa</label>
+            <input type="text" id="cliente_nome" placeholder="Como devemos chamar este projeto?" required>
+        </div>
+
+        <div class="field-group-row" style="display: flex; gap: 1rem;">
+            <div class="field-group" style="flex: 1;">
+                <label for="cliente_email">E-mail</label>
+                <input type="email" id="cliente_email" placeholder="email@exemplo.com" required>
+            </div>
+            <div class="field-group" style="flex: 1;">
+                <label for="cliente_whatsapp">WhatsApp</label>
+                <input type="tel" id="cliente_whatsapp" placeholder="(00) 00000-0000">
+            </div>
+        </div>
         <div class="field-group">
           <label for="tipoProjeto">O que precisamos construir?</label>
           <select id="tipoProjeto" required>
@@ -94,6 +110,12 @@
             <option>Me diferenciar</option>
             <option>Organizar o que já existe</option>
           </select>
+        </div>
+
+        <div id="captcha-container" class="field-group">
+            <label id="label-captcha"></label>
+
+            <input type="number" id="captcha-input" placeholder="Digite o resultado" required>
         </div>
 
         <button type="submit" id="btn-gerar">Ativar Diagnóstico Inteligente</button>

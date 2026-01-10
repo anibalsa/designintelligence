@@ -1,5 +1,16 @@
 {
-  "emocional": ["confuso", "perdido", "travado", "ansioso", "frustrado"],
-  "tecnico": ["posicionamento", "branding", "conversão", "funil", "estratégia"],
-  "vago": ["não sei", "acho", "talvez", "meio", "algo"]
+  "emocional": [
+    "confuso", "perdido", "travado", "ansioso", "frustrado", "inseguro", 
+    "desatualizado", "invisível", "bagunçado", "sobrecarregado", "medo"
+  ],
+  "tecnico": [
+    "posicionamento", "branding", "conversão", "funil", "estratégia", 
+    "autoridade", "escala", "diferenciação", "nicho", "persona", 
+    "ads", "tráfego", "lucro", "processo", "método", "identidade",
+    "faturamento", "investimento", "mercado", "concorrência"
+  ],
+  "vago": [
+    "não sei", "acho", "talvez", "meio", "algo", "coisa", 
+    "qualquer", "tanto faz", "ver no que dá", "dar um jeito"
+  ]
 }

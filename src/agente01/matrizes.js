@@ -4,7 +4,6 @@
  ***********************************************************/
 
 const MATRIZES = {
-
   "Identidade de marca": {
     "Estou começando agora": {
       leitura: "No estágio embrionário, a marca não é um exercício estético, é uma decisão de fundação. O perigo aqui é gastar energia com 'perfumaria' antes de ter uma proposta de valor validada.",
@@ -27,7 +26,6 @@ const MATRIZES = {
       proximo: "Pivotagem estratégica da identidade para sinalizar o novo posicionamento imediatamente."
     }
   },
-
   "Site / Landing page": {
     "Estou começando agora": {
       leitura: "Um site no início não é um portfólio; é uma máquina de validação. Ele deve responder por que você é a escolha certa em menos de 3 segundos.",
@@ -35,7 +33,7 @@ const MATRIZES = {
       proximo: "Focar em arquitetura de informação e copy agressivo de autoridade."
     },
     "Já tenho clientes, quero crescer": {
-      leitura: "Para crescer, seu site precisa deixar de ser um cartão de visitas passivo e se tornar um agente de vendas 24/7 que qualifica os leads por você.",
+      leitura: "Para crescer, seu site precisa deixar de ser um agente de vendas 24/7 que qualifica os leads por você.",
       risco: "Perder conversão por falta de clareza no fluxo de decisão do usuário.",
       proximo: "Otimizar a jornada do usuário com foco total em remoção de fricção e aumento de desejo."
     },
@@ -50,7 +48,6 @@ const MATRIZES = {
       proximo: "Diagnóstico de conversão e reestruturação narrativa completa."
     }
   },
-
   "Posicionamento": {
     "Estou começando agora": {
       leitura: "Posicionamento é o que as pessoas dizem de você quando você não está na sala. Se você não definir isso agora, o mercado o fará de forma genérica.",
@@ -65,27 +62,28 @@ const MATRIZES = {
   }
 };
 
-/**
- * MOTOR DE INTERPRETAÇÃO (Final do Arquivo)
- */
 export function gerarLeitura(dados, estado) {
   const base = MATRIZES[dados.tipoProjeto]?.[dados.momentoNegocio];
+  const perfilTexto = estado.perfilTexto; // Pegamos o perfil detectado
 
   let leitura = base?.leitura || "O cenário indica necessidade de organização estratégica.";
   let risco = base?.risco || "Tomar decisões sem clareza pode gerar desperdício.";
   let proximo = base?.proximo || "Aprofundar o diagnóstico.";
 
-  // Adições Dinâmicas baseadas nos Scores do pesos.js
-  if (estado.clareza < 0) {
-    leitura += " Notei uma névoa conceitual na sua descrição; sem clareza de premissas, o design será apenas um 'curativo'.";
+  // --- CRUZAMENTO DE INTELIGÊNCIA ---
+
+  if (perfilTexto === "conflito_multipotencial") {
+    leitura = "Identifiquei um conflito de 'multipotencialidade'. Você tem clareza técnica, mas sua marca sofre para unir nichos distintos (como os que você citou).";
+    risco = "Diluição de autoridade. O mercado paga prêmios pela especialização; tentar ser tudo para todos gera ruído na sua precificação.";
+    proximo = "Precisamos criar um 'guarda-chuva' simbólico que unifique suas competências ou priorizar o nicho de maior margem no momento.";
   }
 
-  if (estado.risco > 5) {
-    risco += " O seu momento atual é de alta fragilidade operacional. Qualquer movimento estético agora é arriscado.";
+  if (dados.sensacao === "Confuso" && dados.objetivo === "Vender mais") {
+    leitura += " Atenção: Há um desejo de escala sobre uma base confusa. Escalar a confusão é o caminho mais rápido para o prejuízo.";
   }
 
-  if (estado.posicionamento > 4) {
-    proximo = "O foco aqui não é apenas mudar o visual, mas sim reescrever a sua posição de poder no mercado. " + proximo;
+  if (estado.clareza < 0 && perfilTexto === "baixa_clareza") {
+    leitura += " Notei uma névoa conceitual; sem clareza de premissas, o design será apenas um 'curativo'.";
   }
 
   return { leitura, risco, proximo };
